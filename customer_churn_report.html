@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Telecom Customer Churn Analysis</title>
+     <style>
+          body {
+               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+               line-height: 1.6;
+               margin: 0;
+               padding: 0;
+               background-color: #f4f4f4;
+               color: #333;
+               display: flex;
+               flex-direction: column;
+               height: 100vh;
+               overflow: hidden;
+          }
+
+          header,
+          footer {
+               background: #2c3e50;
+               color: #fff;
+               text-align: center;
+               padding: 5px 0;
+               width: 100%;
+               position: absolute;
+               z-index: 10;
+          }
+
+          header {
+               top: 0;
+               border-bottom: #77aaff 3px solid;
+          }
+
+          footer {
+               bottom: 0;
+               border-top: #77aaff 3px solid;
+          }
+
+          nav {
+               position: fixed;
+               left: 0;
+               top: 105px;
+               width: 20%;
+               background: #2c3e50;
+               padding: 20px;
+               box-sizing: border-box;
+               height: calc(100% - 140px);
+               overflow-y: auto;
+          }
+
+          nav ul {
+               list-style: none;
+               padding: 0;
+               margin: 0;
+          }
+
+          nav ul li {
+               margin-bottom: 10px;
+          }
+
+          nav ul li a {
+               color: #fff;
+               text-decoration: none;
+               text-transform: uppercase;
+               font-size: 16px;
+          }
+
+          .main-content {
+               margin-left: 22%;
+               margin-top: 70px;
+               margin-bottom: 50px;
+               padding: 20px;
+               width: 75%;
+               height: calc(100vh - 140px);
+               overflow-y: auto;
+               background: #fff;
+               border-radius: 8px;
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+
+          .main-content h2 {
+               color: #2c3e50;
+               border-bottom: 2px solid #77aaff;
+               padding-bottom: 10px;
+          }
+
+          .main-content ul {
+               list-style: none;
+               padding: 0;
+          }
+
+          .main-content ul li {
+               background: #f4f4f4;
+               margin: 5px 0;
+               padding: 10px;
+               border-left: #77aaff 4px solid;
+          }
+
+          .back-home {
+               display: block;
+               margin-bottom: 20px;
+               text-align: center;
+               font-size: 18px;
+               font-weight: bold;
+               color: #fff;
+               text-decoration: none;
+               background: #77aaff;
+               padding: 10px;
+               border-radius: 5px;
+          }
+
+          .scroll-top-btn {
+               position: fixed;
+               bottom: 20px;
+               right: 20px;
+               background-color: #364548;
+               color: white;
+               padding: 10px;
+               border: none;
+               border-radius: 50%;
+               cursor: pointer;
+               font-size: 24px;
+               display: none;
+          }
+     </style>
+</head>
+
+<body>
+     <header>
+          <h1>Telecommunication Customer's Churn Analysis Report</h1>
+     </header>
+
+     <nav>
+          <ul>
+               <li><a href="index1.html" class="back-home">Back to Home</a></li>
+               <li><a href="#introduction">Introduction</a></li>
+               <li><a href="#data-collection">Data Collection</a></li>
+               <li><a href="#data-cleaning">Data Cleaning</a></li>
+               <li><a href="#eda">Exploratory Data Analysis</a></li>
+               <li><a href="#data-preprocessing">Data Preprocessing</a></li>
+               <li><a href="#model-training">Model Training</a></li>
+               <li><a href="#findings">Findings</a></li>
+               <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
+     </nav>
+
+     <div class="main-content">
+          <section id="introduction">
+               <h2>Introduction</h2>
+               <p>The goal of this analysis is to understand the factors contributing to customer churn in a
+                    telecommunications company and to build a predictive model to identify customers likely to
+                    churn.
+               </p>
+          </section>
+          <section id="data-collection">
+               <h2>Data Collection</h2>
+               <p>The dataset used for this analysis is the "WA_Fn-UseC_-Telco-Customer-Churn.csv" file, which
+                    contains
+                    various customer attributes.</p>
+          </section>
+          <section id="data-cleaning">
+               <h2><Data> Cleaning</Data></h2>
+               <ul>
+                    <li>Removed unnecessary columns like <code>customerID</code>.</li>
+                    <li>Handled missing values in the <code>total_charges</code> column by replacing them with the
+                         mean
+                         value.</li>
+                    <li>Renamed columns for consistency and readability.</li>
+               </ul>
+          </section>
+          <section id="eda">
+               <h2>Exploratory Data Analysis</h2>
+               <ul>
+                    <li>Created new feature <code>average_monthly_spend</code>.</li>
+                    <li>Plotted distributions and boxplots for numerical features like <code>tenure</code>,
+                         <code>monthly_charges</code>, <code>total_charges</code>.
+                    </li>
+                    <li>Generated a correlation heatmap to understand relationships between numerical features.
+                    </li>
+               </ul>
+          </section>
+          <section id="data-preprocessing">
+               <h2>Data Preprocessing</h2>
+               <ul>
+                    <li>Split the data into training and testing sets.</li>
+                    <li>Handled missing values using SimpleImputer.</li>
+                    <li>Addressed class imbalance using SMOTE.</li>
+               </ul>
+          </section>
+          <section id="model-training">
+               <h2>Model Training</h2>
+               <ul>
+                    <li>Trained multiple models including Logistic Regression, Random Forest, Gradient Boosting,
+                         and
+                         XGBoost.</li>
+                    <li>Evaluated models using accuracy, ROC AUC, confusion matrix, and classification report.</li>
+               </ul>
+          </section>
+          <section id="findings">
+               <h2>Findings</h2>
+               <p>The XGBoost model performed the best with an accuracy of 81.69% and a ROC AUC of 0.73. Key
+                    factors
+                    influencing churn include <code>contract type</code>, <code>monthly charges</code>, and
+                    <code>tenure</code>.
+               </p>
+          </section>
+          <section id="conclusion">
+               <h2>Conclusion</h2>
+               <p>The analysis successfully identified key factors contributing to customer churn and built a
+                    predictive
+                    model with good performance. The insights gained can help the company implement targeted
+                    retention
+                    strategies to reduce churn.</p>
+          </section>
+
+     </div>
+
+     <button onclick="scrollToTop()" class="scroll-top-btn">↑</button>
+
+     <script>
+          function scrollToTop() {
+               window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+
+          const topButton = document.querySelector('.scroll-top-btn');
+          window.onscroll = function () {
+               if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    topButton.style.display = "block";
+               } else {
+                    topButton.style.display = "none";
+               }
+          };
+     </script>
+
+     <footer>
+          <p>Customer Churn Analysis Report &copy; By Kalyani B Ray</p>
+     </footer>
+</body>
+
+</html>
