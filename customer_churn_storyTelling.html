@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Telecom Customer Churn Analysis</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <style>
+          body {
+               font-family: Arial, sans-serif;
+               line-height: 1.6;
+          }
+
+          .container {
+               margin-top: 20px;
+          }
+
+          h1,
+          h2,
+          h3 {
+               margin-top: 20px;
+          }
+
+          .content-section {
+               margin-bottom: 40px;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="container">
+          <header class="text-center">
+               <h1>Storytelling: Telecom Customer Churn Analysis</h1>
+          </header>
+          <section class="content-section">
+               <h2>Introduction</h2>
+               <p>The goal of this analysis is to understand the factors contributing to customer churn in a
+                    telecommunications company and to build a predictive model to identify customers likely to churn.
+               </p>
+          </section>
+          <section class="content-section">
+               <h2>Data Collection</h2>
+               <p>The dataset used for this analysis is the "WA_Fn-UseC_-Telco-Customer-Churn.csv" file, which contains
+                    various customer attributes.</p>
+          </section>
+          <section class="content-section">
+               <h2>Data Cleaning</h2>
+               <ul>
+                    <li>Removed unnecessary columns like <code>customerID</code>.</li>
+                    <li>Handled missing values in the <code>total_charges</code> column by replacing them with the mean
+                         value.</li>
+                    <li>Renamed columns for consistency and readability.</li>
+               </ul>
+          </section>
+          <section class="content-section">
+               <h2>Exploratory Data Analysis (EDA)</h2>
+               <h3>Numerical Features Analysis</h3>
+               <ul>
+                    <li>Created new feature <code>average_monthly_spend</code>.</li>
+                    <li>Plotted distributions and boxplots for numerical features like <code>tenure</code>,
+                         <code>monthly_charges</code>, <code>total_charges</code>, and
+                         <code>average_monthly_spend</code>.</li>
+                    <li>Generated a correlation heatmap to understand relationships between numerical features.</li>
+               </ul>
+               <h3>Categorical Features Analysis</h3>
+               <ul>
+                    <li>Analyzed unique values and distributions of categorical features.</li>
+                    <li>Cleaned and encoded categorical features using Label Encoding and One-Hot Encoding.</li>
+               </ul>
+          </section>
+          <section class="content-section">
+               <h2>Data Preprocessing</h2>
+               <ul>
+                    <li>Split the data into training and testing sets.</li>
+                    <li>Handled missing values using SimpleImputer.</li>
+                    <li>Addressed class imbalance using SMOTE.</li>
+               </ul>
+          </section>
+          <section class="content-section">
+               <h2>Model Training</h2>
+               <ul>
+                    <li>Trained multiple models including Logistic Regression, Random Forest, Gradient Boosting, and
+                         XGBoost.</li>
+                    <li>Evaluated models using accuracy, ROC AUC, confusion matrix, and classification report.</li>
+               </ul>
+          </section>
+          <section class="content-section">
+               <h2>Findings</h2>
+               <ul>
+                    <li>The XGBoost model performed the best with an accuracy of 81.69% and a ROC AUC of 0.73.</li>
+                    <li>Key factors influencing churn include <code>contract type</code>, <code>monthly charges</code>,
+                         and <code>tenure</code>.</li>
+               </ul>
+          </section>
+          <section class="content-section">
+               <h2>Conclusion</h2>
+               <p>The analysis successfully identified key factors contributing to customer churn and built a predictive
+                    model with good performance. The insights gained can help the company implement targeted retention
+                    strategies to reduce churn.</p>
+          </section>
+     </div>
+</body>
+
+</html>
